@@ -1,0 +1,129 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="styles/style.css" />
+
+  <!-- EmailJS -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
+    defer
+  ></script>
+
+  <!-- Seu JS -->
+  <script src="src/index.js" defer></script>
+
+  <title>Alwisgabriel | Portfólio</title>
+</head>
+
+
+  <body>
+    <nav class="navegacao">
+      <ul class="menu">
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+
+    <main id="inicio" class="cabecalho">
+      <div>
+        <img
+          class="foto-perfil"
+          src="/assets/imgs/discord_fake_avatar_decorations_1768327201485.gif"
+          alt="Foto de perfil de Gabriel Fernandes Alves"
+        />
+      </div>
+      <h1>Gabriel Fernandes Alves</h1>
+      <p class="cabecalho-sub-titulo">Desenvolvedor Full Stack</p>
+    </main>
+
+    <section id="sobre" class="sobre">
+      <h2 class="sobre-titulo">Sobre mim</h2>
+      <div class="sobre-caixa">
+        <p>
+          Sou programador com foco em desenvolvimento de software, com experiência
+          em JavaScript, React, Node.js, CSS e MySQL. Busco criar soluções
+          eficientes, escaláveis e bem estruturadas, sempre aplicando boas
+          práticas e evoluindo tecnicamente.
+        </p>
+      </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+      <h2>Meus Projetos</h2>
+
+      <div class="projetos-caixa">
+        <div class="projetos-card">
+          <div class="projetos-imagem"></div>
+          <h3 class="info-projetos">Em desenvolvimento</h3>
+          <p class="paragrafo-projetos">
+            Projetos serão adicionados em breve.
+          </p>
+        </div>
+
+        <div class="projetos-card">
+          <div class="projetos-imagem"></div>
+          <h3 class="info-projetos">Em desenvolvimento</h3>
+          <p class="paragrafo-projetos">
+            Espaço reservado para futuros trabalhos.
+          </p>
+        </div>
+
+        <div class="projetos-card">
+          <div class="projetos-imagem"></div>
+          <h3 class="info-projetos">Em desenvolvimento</h3>
+          <p class="paragrafo-projetos">
+            Portfólio em constante evolução.
+          </p>
+        </div>
+      </div>
+    </section>
+
+   <section class="contato" id="contato">
+  <h2 class="contato-titulo">Contato</h2>
+
+  <div id="alerta-sucesso" class="alerta-sucesso">
+  Mensagem enviada com sucesso!
+</div>
+
+
+  <form class="formulario-contato" onsubmit="enviarEmail(event)">
+    <div class="nome-form">
+      <input
+        id="nome"
+        type="text"
+        placeholder="Nome"
+        required
+      />
+    </div>
+
+    <div class="nome-form">
+      <input
+        id="email"
+        type="email"
+        placeholder="Seu e-mail"
+        required
+      />
+    </div>
+
+    <div class="grupo-form">
+      <textarea
+        id="mensagem"
+        class="text-form"
+        placeholder="Digite sua mensagem"
+        required
+      ></textarea>
+    </div>
+
+
+
+<button id="btn-enviar" type="submit">Enviar</button>
+
+  </form>
+</section>
+
+
+  </body>
+</html>
