@@ -115,14 +115,22 @@ section h2 {
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .projetos-imagem {
+  margin-bottom: 10px;
   width: 100%;
   height: 150px;
   border-radius: 14px;
-  background: linear-gradient(135deg, #1d1d2e, #0b0b12);
-  margin-bottom: 18px;
+  overflow: hidden; /* corta o excesso da imagem */
+  background: #0b0b12;
 }
+
+.projetos-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* mantém proporção e preenche */
+  display: block;
+}
+
 
 .projetos-card:hover {
   transform: translateY(-6px);
@@ -135,9 +143,48 @@ section h2 {
 }
 
 .paragrafo-projetos {
+ 
   font-size: 0.95rem;
   color: #b5b5c5;
 }
+
+
+
+.projetos-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 420px;
+}
+
+.projetos-card p {
+  margin-top: 10px ;
+  color: #b5b5c5;
+}
+
+.botoes-links {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.botoes-links button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  cursor: pointer;
+}
+
+
+
+.botoes-links button:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+
 
 /* ================= CONTATO ================= */
 .formulario-contato {
