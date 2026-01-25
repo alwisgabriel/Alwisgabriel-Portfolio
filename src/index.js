@@ -27,7 +27,6 @@ function enviarEmail(event) {
   const nome = document.getElementById("nome").value.trim();
   const email = document.getElementById("email").value.trim();
   const mensagem = document.getElementById("mensagem").value.trim();
-  const anexo = document.getElementById("anexo")?.files[0];
   const botao = document.getElementById("btn-enviar");
   const alerta = document.getElementById("alerta-sucesso");
 
@@ -44,29 +43,25 @@ function enviarEmail(event) {
     time: new Date().toLocaleString("pt-BR")
   };
 
-  const enviar = (dados) => {
-    emailjs
-      .send("default_service", "template_ltizgii", dados)
-      .then(() => {
-        localStorage.setItem(STORAGE_KEY, Date.now());
+  emailjs
+    .send("default_service", "template_ltizgii", params)
+    .then(() => {
+      localStorage.setItem(STORAGE_KEY, Date.now());
 
-        alerta.classList.add("mostrar");
-        document.querySelector(".formulario-contato").reset();
+      alerta.classList.add("mostrar");
+      document.querySelector(".formulario-contato").reset();
 
-        setTimeout(() => {
-          alerta.classList.remove("mostrar");
-        }, 4000);
-      })
-      .catch((err) => {
-        console.error("Erro ao enviar:", err);
-        alert("Erro ao enviar mensagem.");
-      })
-      .finally(() => {
-        enviando = false;
-        botao.disabled = false;
-        botao.innerText = "Enviar";
-      });
-  };
-
-
+      setTimeout(() => {
+        alerta.classList.remove("mostrar");
+      }, 4000);
+    })
+    .catch((err) => {
+      console.error("Erro ao enviar:", err);
+      alert("Erro ao enviar mensagem.");
+    })
+    .finally(() => {
+      enviando = false;
+      botao.disabled = false;
+      botao.innerText = "Enviar";
+    });
 }
