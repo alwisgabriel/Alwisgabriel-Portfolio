@@ -65,3 +65,18 @@ function enviarEmail(event) {
       botao.innerText = "Enviar";
     });
 }
+
+//Button button-verMais
+
+const btn = document.getElementById("button-verMais");
+const msg = document.getElementById("msg");
+
+btn.addEventListener("click", () => {
+  btn.classList.toggle("active");
+
+  if (btn.classList.contains("active")) {
+    msg.style.display = "block";
+  } else {
+    msg.style.display = "none";
+  }
+});

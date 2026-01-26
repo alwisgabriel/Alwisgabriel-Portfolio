@@ -1,4 +1,4 @@
-/* RESET */
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +10,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* BODY */
+/* ================= BODY ================= */
 body {
   background: linear-gradient(180deg, #0f0f14, #08080c);
   color: #e5e5e5;
@@ -32,6 +32,7 @@ body {
   justify-content: center;
   gap: 32px;
   padding: 16px;
+  flex-wrap: wrap;
 }
 
 .menu a {
@@ -47,7 +48,7 @@ body {
 
 /* ================= CABEÇALHO ================= */
 .cabecalho {
-  min-height: 100vh;
+  min-height: 60vh;
   padding-top: 120px;
   display: flex;
   flex-direction: column;
@@ -89,15 +90,74 @@ section h2 {
 }
 
 /* ================= SOBRE ================= */
+section#sobre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centraliza todo o conteúdo horizontalmente */
+  justify-content: center;
+  padding: 0;            /* remove padding que desloca o conteúdo */
+  width: 100%;
+}
+
 .sobre-caixa {
-  background: #14141f;
+  width: 90%;            /* ocupa 90% da largura do container */
+  max-width: 700px;      /* largura máxima */
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;     
+  text-align: center;      
+  padding: 40px 20px;
+  margin: 0;             
+}
+
+
+.paragrafo-sobreMim {
+  line-height: 1.8;
+  font-size: 16px;
+  font-weight: 400;
+  color: #cfcfe3;
+  max-width: 100%;
+}
+
+.sobre-blocos {
+  margin-bottom: 100px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+
+.sobre-bloco {
+  margin-left: 10px;
+  margin-right: 10px;
+  background: linear-gradient(180deg, #14141f, #10101a);
   border: 1px solid #2a2a3d;
   border-radius: 18px;
-  padding: 40px;
-  margin-left: 105px;
-  margin-right: 105px;
-  line-height: 1.7;
+  padding: 32px;
+  text-align: center;
   color: #cfcfe3;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sobre-bloco h3 {
+  margin: 10px 0 12px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.sobre-bloco p {
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.sobre-bloco:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 /* ================= PROJETOS ================= */
@@ -114,52 +174,30 @@ section h2 {
   padding: 26px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
 .projetos-imagem {
   margin-bottom: 10px;
   width: 100%;
-  height: 150px;
+  height: 180px;
   border-radius: 14px;
-  overflow: hidden; /* corta o excesso da imagem */
+  overflow: hidden;
   background: #0b0b12;
 }
 
 .projetos-imagem img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* mantém proporção e preenche */
+  object-fit: cover;
   display: block;
 }
-
 
 .projetos-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 32px rgba(76, 76, 255, 0.18);
-}
-
-.info-projetos {
-  font-size: 1.2rem;
-  margin-bottom: 6px;
-}
-
-.paragrafo-projetos {
- 
-  font-size: 0.95rem;
-  color: #b5b5c5;
-}
-
-
-
-.projetos-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 420px;
-}
-
-.projetos-card p {
-  margin-top: 10px ;
-  color: #b5b5c5;
 }
 
 .botoes-links {
@@ -173,18 +211,49 @@ section h2 {
   padding: 8px 16px;
   border-radius: 8px;
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #fff;
   cursor: pointer;
 }
 
-
-
 .botoes-links button:hover {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.1);
 }
 
+.verMais {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
 
+#button-verMais {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+#button-verMais.active {
+  background: #ffffff;
+  color: #000000;
+  transform: scale(0.96);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.container-msg {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+#msg {
+  font-size: 0.95rem;
+  color: #b5b5c5;
+  display: none;
+}
 
 /* ================= CONTATO ================= */
 .formulario-contato {
@@ -216,62 +285,6 @@ section h2 {
   color: #8f8fa3;
 }
 
-/* ================= ANIMAÇÕES ================= */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes flutuar {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
-}
-
-/* ================= RESPONSIVO ================= */
-@media (max-width: 600px) {
-  .menu {
-    gap: 18px;
-    font-size: 0.9rem;
-  }
-
-  .cabecalho h1 {
-    font-size: 1.6rem;
-  }
-
-  .foto-perfil {
-    width: 150px;
-  }
-}
-
-
-/* ================= ALERTA CUSTOM ================= */
-.alerta-sucesso {
-  display: none;
-  margin: 0 auto 20px auto;
-  max-width: 480px;
-  padding: 14px 18px;
-  background: linear-gradient(135deg, #4c4cff, #6c6cff);
-  color: #ffffff;
-  text-align: center;
-  border-radius: 14px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  box-shadow: 0 12px 30px rgba(76, 76, 255, 0.35);
-  animation: fadeIn 0.4s ease;
-}
-
-.alerta-sucesso.mostrar {
-  display: block;
-}
-
-/* ================= BOTÃO ENVIAR ================= */
 #btn-enviar {
   background: linear-gradient(135deg, #4c4cff, #6c6cff);
   border: none;
@@ -294,81 +307,89 @@ section h2 {
   transform: none;
 }
 
-/* ================= ANIMAÇÃO ALERTA ================= */
+.alerta-sucesso {
+  display: none;
+  margin: 0 auto 20px auto;
+  max-width: 480px;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, #4c4cff, #6c6cff);
+  color: #ffffff;
+  text-align: center;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 12px 30px rgba(76, 76, 255, 0.35);
+  animation: fadeIn 0.4s ease;
+}
+
+.alerta-sucesso.mostrar {
+  display: block;
+}
+
+/* ================= ANIMAÇÕES ================= */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes flutuar {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.upload-label {
-  cursor: pointer;
-  color: #b5b5ff;
-  font-size: 0.9rem;
-  transition: opacity 0.2s;
-}
-
-.upload-label:hover {
-  opacity: 0.8;
-}
-
-/* ================= AJUSTES RESPONSIVOS ================= */
-
-/* SOBRE */
-.sobre-caixa {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 800px;
-}
-
-/* CARDS */
-.projetos-card {
-  min-height: unset; /* remove altura forçada */
-}
-
-/* IMAGEM DO CARD */
-.projetos-imagem {
-  height: 180px;
-}
-
+/* ================= RESPONSIVO ================= */
 @media (max-width: 900px) {
   section {
     padding: 60px 16px;
   }
 
   .sobre-caixa {
-    padding: 28px;
+    padding: 30px 16px;
+    min-height: 350px;
+  }
+
+  .paragrafo-sobreMim {
+    font-size: 15px;
   }
 }
 
 @media (max-width: 600px) {
-  /* NAV */
   .menu {
-    flex-wrap: wrap;
     gap: 16px;
+    font-size: 0.9rem;
   }
 
-  /* CABEÇALHO */
   .cabecalho {
     padding-top: 100px;
+  }
+
+  .cabecalho h1 {
+    font-size: 1.6rem;
   }
 
   .foto-perfil {
     width: 140px;
   }
 
-  /* SOBRE */
   .sobre-caixa {
-    padding: 22px;
-    font-size: 0.95rem;
+    padding: 20px 12px;
+    min-height: 300px;
   }
 
-  /* PROJETOS */
+  .paragrafo-sobreMim {
+    font-size: 14px;
+  }
+
+  .sobre-blocos {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
   .projetos-caixa {
     grid-template-columns: 1fr;
   }
@@ -377,7 +398,6 @@ section h2 {
     height: 160px;
   }
 
-  /* BOTÕES */
   .botoes-links {
     flex-direction: column;
   }
@@ -386,4 +406,3 @@ section h2 {
     width: 100%;
   }
 }
-
