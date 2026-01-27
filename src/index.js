@@ -80,3 +80,23 @@ btn.addEventListener("click", () => {
     msg.style.display = "none";
   }
 });
+
+
+//Efeito rolagem
+
+const elementos = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
+    });
+  },
+  {
+    threshold: 0.15
+  }
+);
+
+elementos.forEach(el => observer.observe(el));
