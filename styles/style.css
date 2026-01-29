@@ -178,6 +178,10 @@ section#sobre {
   justify-content: space-between;
 }
 
+.projetos-card h3 {
+  margin-bottom: 12px;
+}
+
 .projetos-imagem {
   margin-bottom: 10px;
   width: 100%;
